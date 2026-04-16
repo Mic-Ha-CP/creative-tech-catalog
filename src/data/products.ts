@@ -1,0 +1,208 @@
+import { Product } from "@/types/product";
+
+export const products: Product[] = [
+  {
+    id: "p-001",
+    slug: "lumen-sketch-pad-12",
+    name: "Lumen SketchPad 12",
+    category: "drawing tablets",
+    shortDescription: "Compact pen display built for daily concept work.",
+    longDescription:
+      "The Lumen SketchPad 12 is a lightweight drawing tablet for digital artists who want a focused workspace. It offers low-latency pen tracking, a matte screen texture, and a simple setup for studio or travel use.",
+    price: 329,
+    imageUrl: "https://placehold.co/1200x900.png?text=Lumen+SketchPad+12",
+    specs: [
+      { label: "Active Area", value: "11.6 in" },
+      { label: "Resolution", value: "1920 x 1080" },
+      { label: "Pressure Levels", value: "8192" },
+      { label: "Connection", value: "USB-C" },
+    ],
+  },
+  {
+    id: "p-002",
+    slug: "pixelforge-canvas-15",
+    name: "PixelForge Canvas 15",
+    category: "drawing tablets",
+    shortDescription: "15-inch creative display for detailed illustration.",
+    longDescription:
+      "PixelForge Canvas 15 gives illustrators extra space for line art and rendering work. The panel is color-accurate for portfolio production, while programmable keys reduce repetitive actions during long sessions.",
+    price: 479,
+    imageUrl: "https://placehold.co/1200x900.png?text=PixelForge+Canvas+15",
+    specs: [
+      { label: "Active Area", value: "15.4 in" },
+      { label: "Color Gamut", value: "98% sRGB" },
+      { label: "Shortcut Keys", value: "8 keys + dial" },
+      { label: "Stand", value: "Adjustable" },
+    ],
+  },
+  {
+    id: "p-003",
+    slug: "inktrail-pen-pro",
+    name: "InkTrail Pen Pro",
+    category: "styluses",
+    shortDescription: "Battery-free stylus with balanced grip and tilt support.",
+    longDescription:
+      "InkTrail Pen Pro is designed for long drawing sessions with minimal hand fatigue. The body has a textured finish for grip, and the nib system makes it easy to switch between sketch and technical workflows.",
+    price: 79,
+    imageUrl: "https://placehold.co/1200x900.png?text=InkTrail+Pen+Pro",
+    specs: [
+      { label: "Tilt Recognition", value: "60 degrees" },
+      { label: "Buttons", value: "2 side buttons" },
+      { label: "Battery", value: "Battery-free" },
+      { label: "Weight", value: "14 g" },
+    ],
+  },
+  {
+    id: "p-004",
+    slug: "draftline-pen-lite",
+    name: "DraftLine Pen Lite",
+    category: "styluses",
+    shortDescription: "Simple entry stylus for note-taking and sketching.",
+    longDescription:
+      "DraftLine Pen Lite is a straightforward stylus for beginners and students. It focuses on reliable tracking and a comfortable shape, making it a good option for quick ideation and study workflows.",
+    price: 49,
+    imageUrl: "https://placehold.co/1200x900.png?text=DraftLine+Pen+Lite",
+    specs: [
+      { label: "Pressure Levels", value: "4096" },
+      { label: "Nib Type", value: "Soft friction tip" },
+      { label: "Compatibility", value: "Most EMR tablets" },
+      { label: "Included Nibs", value: "5" },
+    ],
+  },
+  {
+    id: "p-005",
+    slug: "keystream-creator-75",
+    name: "KeyStream Creator 75",
+    category: "keyboards",
+    shortDescription: "Compact mechanical keyboard tuned for creative shortcuts.",
+    longDescription:
+      "KeyStream Creator 75 brings a compact layout with dedicated media and macro functions. It is built for editing, design, and production workflows where reliable key feel and programmable layers matter.",
+    price: 169,
+    imageUrl: "https://placehold.co/1200x900.png?text=KeyStream+Creator+75",
+    specs: [
+      { label: "Layout", value: "75%" },
+      { label: "Switch Type", value: "Linear" },
+      { label: "Connection", value: "USB-C / Bluetooth" },
+      { label: "Backlight", value: "Per-key RGB" },
+    ],
+  },
+  {
+    id: "p-006",
+    slug: "framekey-studio-tkl",
+    name: "FrameKey Studio TKL",
+    category: "keyboards",
+    shortDescription: "Tenkeyless board with focused layout for edit suites.",
+    longDescription:
+      "FrameKey Studio TKL is made for users who want a cleaner desk setup and more mouse room. Sound-dampened construction and tactile switches keep it responsive without becoming distracting in shared spaces.",
+    price: 149,
+    imageUrl: "https://placehold.co/1200x900.png?text=FrameKey+Studio+TKL",
+    specs: [
+      { label: "Layout", value: "TKL" },
+      { label: "Switch Type", value: "Tactile" },
+      { label: "Case", value: "Aluminum top frame" },
+      { label: "Polling Rate", value: "1000 Hz" },
+    ],
+  },
+  {
+    id: "p-007",
+    slug: "deskflow-arm-rest",
+    name: "DeskFlow Arm Rest",
+    category: "desk accessories",
+    shortDescription: "Support pad to reduce wrist strain during long sessions.",
+    longDescription:
+      "DeskFlow Arm Rest is designed to improve comfort during extended drawing or editing sessions. The memory-foam core and low-friction fabric surface support smooth arm movement across large desks.",
+    price: 39,
+    imageUrl: "https://placehold.co/1200x900.png?text=DeskFlow+Arm+Rest",
+    specs: [
+      { label: "Material", value: "Memory foam + woven fabric" },
+      { label: "Length", value: "40 cm" },
+      { label: "Base", value: "Non-slip rubber" },
+      { label: "Care", value: "Spot clean" },
+    ],
+  },
+  {
+    id: "p-008",
+    slug: "griddock-organizer-tray",
+    name: "GridDock Organizer Tray",
+    category: "desk accessories",
+    shortDescription: "Modular tray system for stylus, cables, and adapters.",
+    longDescription:
+      "GridDock Organizer Tray keeps frequently used tools in one place with removable dividers. It helps creative desks stay tidy while allowing custom layouts for devices, pens, cards, and charging accessories.",
+    price: 34,
+    imageUrl: "https://placehold.co/1200x900.png?text=GridDock+Organizer+Tray",
+    specs: [
+      { label: "Compartments", value: "6 configurable slots" },
+      { label: "Material", value: "Matte ABS" },
+      { label: "Footprint", value: "28 x 18 cm" },
+      { label: "Weight", value: "380 g" },
+    ],
+  },
+  {
+    id: "p-009",
+    slug: "tonepilot-color-pad",
+    name: "TonePilot Color Pad",
+    category: "creative tools",
+    shortDescription: "Shortcut pad for color grading and timeline workflows.",
+    longDescription:
+      "TonePilot Color Pad provides a compact set of knobs and keys that map to common grading actions. It is useful for creators who want tactile controls instead of relying only on keyboard combinations.",
+    price: 219,
+    imageUrl: "https://placehold.co/1200x900.png?text=TonePilot+Color+Pad",
+    specs: [
+      { label: "Controls", value: "3 dials + 12 keys" },
+      { label: "Profiles", value: "Up to 10" },
+      { label: "Connection", value: "USB-C" },
+      { label: "Software", value: "Desktop configurator" },
+    ],
+  },
+  {
+    id: "p-010",
+    slug: "clipcraft-audio-dial",
+    name: "ClipCraft Audio Dial",
+    category: "creative tools",
+    shortDescription: "Desktop dial for timeline scrubbing and audio control.",
+    longDescription:
+      "ClipCraft Audio Dial helps editors navigate long projects with precise jog control and quick access buttons. The compact body fits small workstations while still giving clear tactile feedback.",
+    price: 129,
+    imageUrl: "https://placehold.co/1200x900.png?text=ClipCraft+Audio+Dial",
+    specs: [
+      { label: "Primary Control", value: "Infinite rotary encoder" },
+      { label: "Buttons", value: "5 programmable keys" },
+      { label: "Body", value: "Anodized aluminum" },
+      { label: "Cable", value: "Detachable USB-C" },
+    ],
+  },
+  {
+    id: "p-011",
+    slug: "chromawire-mini-keys",
+    name: "ChromaWire Mini Keys",
+    category: "creative tools",
+    shortDescription: "Portable macro keypad for design and production apps.",
+    longDescription:
+      "ChromaWire Mini Keys offers lightweight programmable controls for creators moving between home, studio, and client sites. It keeps common actions within reach and reduces repetitive keyboard shortcuts.",
+    price: 99,
+    imageUrl: "https://placehold.co/1200x900.png?text=ChromaWire+Mini+Keys",
+    specs: [
+      { label: "Keys", value: "12 hot-swappable keys" },
+      { label: "Profiles", value: "On-device profile switching" },
+      { label: "Connection", value: "USB-C / 2.4 GHz" },
+      { label: "Battery", value: "Up to 20 hours wireless" },
+    ],
+  },
+  {
+    id: "p-012",
+    slug: "sketchrail-portable-stand",
+    name: "SketchRail Portable Stand",
+    category: "desk accessories",
+    shortDescription: "Foldable stand for tablets and compact drawing displays.",
+    longDescription:
+      "SketchRail Portable Stand gives artists adjustable viewing angles in a travel-ready frame. It supports tablets and compact pen displays, helping maintain better posture in temporary work setups.",
+    price: 59,
+    imageUrl: "https://placehold.co/1200x900.png?text=SketchRail+Portable+Stand",
+    specs: [
+      { label: "Angle Range", value: "15 to 65 degrees" },
+      { label: "Weight Capacity", value: "4 kg" },
+      { label: "Material", value: "Aluminum alloy" },
+      { label: "Folded Thickness", value: "1.8 cm" },
+    ],
+  },
+];
