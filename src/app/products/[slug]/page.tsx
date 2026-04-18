@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProductImageFrame } from "@/components/catalog/ProductImageFrame";
 import { Container } from "@/components/layout/Container";
 import { formatCurrency, getAllProducts, getProductBySlug } from "@/lib/catalog";
 
@@ -30,13 +30,12 @@ export default async function ProductDetailPage({
         </Link>
       </div>
       <article className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <Image
+        <ProductImageFrame
           src={product.imageUrl}
           alt={product.name}
-          width={1200}
-          height={900}
-          className="h-auto w-full rounded-xl border border-slate-200 bg-white object-cover"
           priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="rounded-xl border border-slate-200 bg-white"
         />
         <div className="space-y-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">

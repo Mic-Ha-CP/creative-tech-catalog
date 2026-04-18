@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ProductImageFrame } from "@/components/catalog/ProductImageFrame";
 import { formatCurrency } from "@/lib/catalog";
 import { Product } from "@/types/product";
 
@@ -11,12 +11,10 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       <Link href={`/products/${product.slug}`} className="block">
-        <Image
+        <ProductImageFrame
           src={product.imageUrl}
           alt={product.name}
-          width={1200}
-          height={900}
-          className="h-48 w-full object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </Link>
       <div className="space-y-3 p-4">
