@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className="min-h-full bg-slate-50 text-slate-900">
         <div className="flex min-h-full flex-col">
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="min-w-0 flex-1 overflow-x-hidden">{children}</main>
           <SiteFooter />
         </div>
       </body>
