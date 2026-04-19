@@ -2,7 +2,11 @@ import { CategoryFilter } from "@/components/catalog/CategoryFilter";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { SearchField } from "@/components/catalog/SearchField";
 import { Container } from "@/components/layout/Container";
-import { filterProducts, getCategories } from "@/lib/catalog";
+import {
+  fetchAllProducts,
+  filterProducts,
+  getCategories,
+} from "@/lib/catalog";
 
 type HomePageProps = {
   searchParams: Promise<{ q?: string; category?: string }>;
@@ -12,11 +16,31 @@ export default async function Home({ searchParams }: HomePageProps) {
   const params = await searchParams;
   const searchQuery = params.q ?? "";
   const selectedCategory = params.category ?? "";
-  const products = filterProducts({
+
+  let loadError: string | null = null;
+  let allProducts: Awaited<ReturnType<typeof fetchAllProducts>> = [];
+
+  try {
+    allProducts = await fetchAllProducts();
+  } catch {
+    loadError = "Could not load products. Please try again later.";
+  }
+
+  if (loadError) {
+    return (
+      <Container className="py-8 sm:py-10">
+        <div className="rounded-xl border border-red-200 bg-red-50 p-6 text-red-800 dark:border-red-900 dark:bg-red-950/40 dark:text-red-200">
+          {loadError}
+        </div>
+      </Container>
+    );
+  }
+
+  const categories = getCategories(allProducts);
+  const products = filterProducts(allProducts, {
     query: searchQuery,
     category: selectedCategory,
   });
-  const categories = getCategories();
 
   return (
     <Container className="py-8 sm:py-10">

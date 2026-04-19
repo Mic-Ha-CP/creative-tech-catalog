@@ -1,9 +1,17 @@
 import { QuoteForm } from "@/components/quote/QuoteForm";
 import { Container } from "@/components/layout/Container";
-import { getAllProducts } from "@/lib/catalog";
+import { fetchAllProducts } from "@/lib/catalog";
 
-export default function QuotePage() {
-  const productOptions = getAllProducts().map((product) => product.name);
+export default async function QuotePage() {
+  let productOptions: string[] = [];
+  let loadError: string | null = null;
+
+  try {
+    const products = await fetchAllProducts();
+    productOptions = products.map((product) => product.name);
+  } catch {
+    loadError = "Could not load product names. Please try again later.";
+  }
 
   return (
     <Container className="py-8 sm:py-10">
@@ -16,7 +24,13 @@ export default function QuotePage() {
           creative setup.
         </p>
       </section>
-      <QuoteForm productOptions={productOptions} />
+      {loadError ? (
+        <div className="rounded-xl border border-red-200 bg-red-50 p-6 text-red-800 dark:border-red-900 dark:bg-red-950/40 dark:text-red-200">
+          {loadError}
+        </div>
+      ) : (
+        <QuoteForm productOptions={productOptions} />
+      )}
     </Container>
   );
 }

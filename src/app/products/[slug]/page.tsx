@@ -2,21 +2,26 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductImageFrame } from "@/components/catalog/ProductImageFrame";
 import { Container } from "@/components/layout/Container";
-import { formatCurrency, getAllProducts, getProductBySlug } from "@/lib/catalog";
+import {
+  fetchAllProducts,
+  fetchProductBySlug,
+  formatCurrency,
+} from "@/lib/catalog";
 
 type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return getAllProducts().map((product) => ({ slug: product.slug }));
+export async function generateStaticParams() {
+  const products = await fetchAllProducts();
+  return products.map((product) => ({ slug: product.slug }));
 }
 
 export default async function ProductDetailPage({
   params,
 }: ProductDetailPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await fetchProductBySlug(slug);
 
   if (!product) {
     notFound();
