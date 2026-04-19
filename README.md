@@ -26,7 +26,7 @@ Open http://localhost:3000
 ## Project Structure
 - src/app routes and layouts
 - src/components reusable UI
-- src/data/products.ts mock product data
+- src/data/products.json mock product data (served via /api/products)
 - src/lib utility/business logic
 - src/types shared types
 

@@ -1,18 +1,7 @@
-import { headers } from "next/headers";
 import { readProductsFromFile } from "@/lib/products-source";
 import type { Product, ProductCategory } from "@/types/product";
 
-async function resolveRequestOrigin(): Promise<string> {
-  try {
-    const headerList = await headers();
-    const host = headerList.get("x-forwarded-host") ?? headerList.get("host");
-    if (host) {
-      const protocol = headerList.get("x-forwarded-proto") ?? "http";
-      return `${protocol}://${host}`;
-    }
-  } catch {
-    // No request context (e.g. some static generation paths).
-  }
+function getInternalApiOrigin(): string {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
@@ -25,7 +14,7 @@ async function resolveRequestOrigin(): Promise<string> {
  */
 export async function fetchAllProducts(): Promise<Product[]> {
   try {
-    const origin = await resolveRequestOrigin();
+    const origin = getInternalApiOrigin();
     const response = await fetch(`${origin}/api/products`, {
       cache: "no-store",
     });
@@ -43,7 +32,7 @@ export async function fetchAllProducts(): Promise<Product[]> {
  */
 export async function fetchProductBySlug(slug: string): Promise<Product | null> {
   try {
-    const origin = await resolveRequestOrigin();
+    const origin = getInternalApiOrigin();
     const response = await fetch(
       `${origin}/api/products/${encodeURIComponent(slug)}`,
       { cache: "no-store" },
