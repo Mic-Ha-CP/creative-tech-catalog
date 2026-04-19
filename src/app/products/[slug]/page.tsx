@@ -25,7 +25,7 @@ export default async function ProductDetailPage({
   return (
     <Container className="py-8 sm:py-10">
       <div className="mb-6">
-        <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+        <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
           Back to products
         </Link>
       </div>
@@ -35,29 +35,29 @@ export default async function ProductDetailPage({
           alt={product.name}
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="rounded-xl border border-slate-200 bg-white"
+          className="rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
         />
         <div className="space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
             {product.category}
           </p>
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
             {product.name}
           </h1>
-          <p className="text-2xl font-semibold text-slate-900">
+          <p className="text-2xl font-semibold text-slate-900 dark:text-slate-50">
             {formatCurrency(product.price)}
           </p>
-          <p className="text-base leading-7 text-slate-700">{product.longDescription}</p>
-          <section className="rounded-lg border border-slate-200 bg-white p-4">
-            <h2 className="mb-3 text-base font-semibold text-slate-900">Key specs</h2>
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{product.longDescription}</p>
+          <section className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="mb-3 text-base font-semibold text-slate-900 dark:text-slate-50">Key specs</h2>
             <dl className="space-y-2">
               {product.specs.map((spec) => (
                 <div
                   key={spec.label}
-                  className="flex items-start justify-between gap-4 border-b border-slate-100 pb-2 text-sm last:border-b-0 last:pb-0"
+                  className="flex items-start justify-between gap-4 border-b border-slate-100 pb-2 text-sm last:border-b-0 last:pb-0 dark:border-slate-800"
                 >
-                  <dt className="text-slate-600">{spec.label}</dt>
-                  <dd className="text-right font-medium text-slate-900">{spec.value}</dd>
+                  <dt className="text-slate-600 dark:text-slate-400">{spec.label}</dt>
+                  <dd className="text-right font-medium text-slate-900 dark:text-slate-50">{spec.value}</dd>
                 </div>
               ))}
             </dl>

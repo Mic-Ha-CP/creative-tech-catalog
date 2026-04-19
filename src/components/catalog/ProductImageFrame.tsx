@@ -18,7 +18,7 @@ export function ProductImageFrame({
 }: ProductImageFrameProps) {
   return (
     <div
-      className={`relative aspect-[4/3] w-full overflow-hidden bg-slate-100 ${className}`}
+      className={`relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-900 ${className}`}
     >
       <Image
         src={src}

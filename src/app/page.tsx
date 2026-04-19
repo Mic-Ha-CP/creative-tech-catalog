@@ -21,16 +21,16 @@ export default async function Home({ searchParams }: HomePageProps) {
   return (
     <Container className="py-8 sm:py-10">
       <section className="mb-8 space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
+        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
           Creative Tech Product Catalog
         </h1>
-        <p className="max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+        <p className="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base">
           Explore fictional creative tools, from drawing tablets to desk
           accessories. Use search and category filters to quickly narrow results.
         </p>
       </section>
 
-      <form className="mb-8 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-3">
+      <form className="mb-8 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:grid-cols-3">
         <div className="sm:col-span-2">
           <SearchField defaultValue={searchQuery} />
         </div>
@@ -41,7 +41,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         <div className="sm:col-span-3">
           <button
             type="submit"
-            className="h-10 rounded-md bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
+            className="h-10 rounded-md bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
           >
             Apply Filters
           </button>
@@ -49,7 +49,7 @@ export default async function Home({ searchParams }: HomePageProps) {
       </form>
 
       {products.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-600">
+        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-600 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
           No products match your search. Try changing the query or category.
         </div>
       ) : (
